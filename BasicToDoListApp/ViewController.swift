@@ -121,4 +121,11 @@ extension ViewController: UITableViewDelegate {
             }
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var task = tasks[indexPath.row]
+        task.done = !task.done
+        tasks[indexPath.row] = task
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
 }
