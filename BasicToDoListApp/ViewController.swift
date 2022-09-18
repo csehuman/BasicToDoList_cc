@@ -105,7 +105,15 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        var newTasks = tasks
+        let task = newTasks[sourceIndexPath.row]
+        newTasks.remove(at: sourceIndexPath.row)
+        newTasks.insert(task, at: destinationIndexPath.row)
+        tasks = newTasks
         
+//        let task = tasks[sourceIndexPath.row]
+//        tasks.remove(at: sourceIndexPath.row)
+//        tasks.insert(task, at: destinationIndexPath.row)
     }
 }
 
