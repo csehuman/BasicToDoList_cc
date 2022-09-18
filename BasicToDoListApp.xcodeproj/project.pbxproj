@@ -13,6 +13,7 @@
 		DABBDAE928D6F22800A1C5BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABBDAE728D6F22800A1C5BC /* Main.storyboard */; };
 		DABBDAEB28D6F22A00A1C5BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DABBDAEA28D6F22A00A1C5BC /* Assets.xcassets */; };
 		DABBDAEE28D6F22A00A1C5BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABBDAEC28D6F22A00A1C5BC /* LaunchScreen.storyboard */; };
+		DABBDAF628D6F34600A1C5BC /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABBDAF528D6F34600A1C5BC /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DABBDAEA28D6F22A00A1C5BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DABBDAED28D6F22A00A1C5BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DABBDAEF28D6F22A00A1C5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DABBDAF528D6F34600A1C5BC /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				DABBDAEA28D6F22A00A1C5BC /* Assets.xcassets */,
 				DABBDAEC28D6F22A00A1C5BC /* LaunchScreen.storyboard */,
 				DABBDAEF28D6F22A00A1C5BC /* Info.plist */,
+				DABBDAF528D6F34600A1C5BC /* Task.swift */,
 			);
 			path = BasicToDoListApp;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DABBDAF628D6F34600A1C5BC /* Task.swift in Sources */,
 				DABBDAE628D6F22800A1C5BC /* ViewController.swift in Sources */,
 				DABBDAE228D6F22800A1C5BC /* AppDelegate.swift in Sources */,
 				DABBDAE428D6F22800A1C5BC /* SceneDelegate.swift in Sources */,
