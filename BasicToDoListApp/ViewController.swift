@@ -10,7 +10,9 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var editButton: UIBarButtonItem!
     
+    var doneButton: UIBarButtonItem?
     
     var tasks = [Task]() {
         didSet {
@@ -25,7 +27,15 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tapDoneButton))
+        
         loadTasks()
+    }
+    
+    @objc func tapDoneButton() {
+        print("here")
+        navigationItem.leftBarButtonItem = editButton
+        tableView.setEditing(false, animated: true)
     }
     
     @IBAction func tapAddButton(_ sender: UIBarButtonItem) {
@@ -49,7 +59,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapEditButton(_ sender: UIBarButtonItem) {
-        
+        guard !tasks.isEmpty else { return }
+        navigationItem.leftBarButtonItem = doneButton
+        tableView.setEditing(true, animated: true)
     }
     
     func loadTasks() {
@@ -100,6 +112,13 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        tasks.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
         
+        if tasks.isEmpty {
+            DispatchQueue.main.async {
+                self.tapDoneButton()
+            }
+        }
     }
 }
